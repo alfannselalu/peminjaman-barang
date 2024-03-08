@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Register | MOCKUP HTML</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+        <!-- owl.carousel css -->
+        <link rel="stylesheet" href="../assets/libs/owl.carousel/assets/owl.carousel.min.css">
+
+        <link rel="stylesheet" href="../assets/libs/owl.carousel/assets/owl.theme.default.min.css">
+
+        <!-- Bootstrap Css -->
+        <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="auth-body-bg">
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+    
+                    <div class="row justify-content-center" style="position: relative; bottom:2rem; right: 5rem;">
+                        <div class="col-lg-8 col-md-10 col-sm-12">
+                        <div class="card o-hidden border-dark shadow-lg">
+                            <div class="card-body p-0">
+                                <!-- Nested Row within Card Body -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="p-5">
+                                            <div class="text-center mb-2">
+                                                <h1 class="h4 mb-5 pt-4 text-xl font-semibold">Daftar Prakerin</h1>
+                                            </div>
+                                            <form action="../admin/index.html" method="POST" enctype="multipart/form-data">
+                                                <div>
+                                                    <div class="mb-3 row">
+                                                        <label for="nama" class="col-md-2 col-form-label">Nama</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" placeholder="Masukkan Nama" name="nama">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label for="username" class="col-md-2 col-form-label">Username</label>
+                                                        <div class="col-md-10">
+                                                            <input type="text" class="form-control" name="username" placeholder="Masukkan Username">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label for="nama_sekolah" class="col-md-2 col-form-label">Nama Sekolah</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" name="nama_sekolah" placeholder="Masukkan Nama Sekolah">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label for="email" class="col-md-2 col-form-label">E-Mail</label>
+                                                        <div class="col-md-10">
+                                                            <input type="email" class="form-control" required parsley-type="email" placeholder="Masukkan Email" name="email" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label for="nama_pembimbing" class="col-md-2 col-form-label">Nama Pembimbing</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" placeholder="Masukkan Nama Pembimbing" name="nama_pembimbing">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label for="kelas" class="col-md-2 col-form-label">Kelas</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="number" placeholder="Masukkan Kelas" name="kelas">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label for="jurusan" class="col-md-2 col-form-label">Jurusan</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" placeholder="Masukkan Jurusan" name="jurusan">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label for="nomor_telepon" class="col-md-2 col-form-label">No.Telp</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="number" placeholder="+627-0011-999" name="nomor_telepon">
+                                                        </div>
+                                                    </div>                                                    
+                                                    <hr style="border: 1px solid rgba(0, 0, 0, 0.066);">
+                                                <div>
+                                                    <div class="form-group mb-3 row">
+                                                        <label for="tanggal_lahir" class="col-md-2 col-form-label">Kelahiran</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="date" name="tanggal_lahir">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-3 row">
+                                                        <label for="jenis_kelamin" class="col-md-2 col-form-label">Jenis Kelamin</label>
+                                                        <div class="col-md-10">
+                                                            <select class="form-select" name="jenis_kelamin">
+                                                                <option selected hidden disabled>Pilih Jenis Kelamin</option>
+                                                                <option value="L">Laki-Laki</option>
+                                                                <option value="P">Perempuan</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-3 row">
+                                                        <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+                                                        <div class="col-md-10">
+                                                            <textarea class="form-control" type="textarea" placeholder="Masukkan Alamat" name="alamat"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>                            
+                                                <div class="form-group mb-3 row">
+                                                    <label for="posisi_jabatan" class="col-md-2 col-form-label">Kemampuan</label>
+                                                    <div class="col-md-10">
+                                                        <select class="form-select" name="posisi_jabatan">
+                                                            <option selected hidden disabled>Pilih Kemampuan</option>
+                                                            <option value="Admin">Admin</option>
+                                                            <option value="Programming">Programming</option>
+                                                            <option value="IT Department">IT Department</option>
+                                                            <option value="IT Department">UI/UX Design</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="tanggal_bergabung" class="col-md-2 col-form-label">Tanggal Bergabung</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="date" name="tanggal_bergabung">
+                                                    </div>
+                                                </div>
+                                                    <div class="form-group mb-3 row">
+                                                        <label for="image" class="col-md-2 col-form-label">Gambar</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="file" id="image" name="image" autofocus>
+                                                        </div>                                              
+                                                    </div>
+                                                </div>
+                                                    <div class="form-group mb-3 row">
+                                                        <label for="cv" class="col-md-2 col-form-label">CV</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="file" id="cv" name="cv" autofocus>
+                                                        </div>                                              
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary w-md mb-4" id="simpan">Kirim</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end main content-->
+    
+
+        <!-- JAVASCRIPT -->
+        <script src="../assets/libs/jquery/jquery.min.js"></script>
+        <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="../assets/libs/node-waves/waves.min.js"></script>
+
+        <!-- owl.carousel js -->
+        <script src="../assets/libs/owl.carousel/owl.carousel.min.js"></script>
+
+        <!-- validation init -->
+        <script src="../assets/js/pages/validation.init.js"></script>
+
+        <!-- auth-2-carousel init -->
+        <script src="../assets/js/pages/auth-2-carousel.init.js"></script>
+
+        <!-- App js -->
+        <script src="../assets/js/app.js"></script>
+
+    </body>
+</html>
