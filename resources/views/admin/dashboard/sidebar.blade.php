@@ -134,7 +134,7 @@
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="#" key="t-basic-tables">Data Barang Masuk</a></li>
                                 <li><a href="#" key="t-basic-tables">Data Barang Keluar</a></li>
-                                <li><a href="#" key="t-data-tables">Data Penyedia</a></li>
+                                <li><a href="/penyedia" key="t-data-tables">Data Penyedia</a></li>
                             </ul>
                         </li>
                         <li>

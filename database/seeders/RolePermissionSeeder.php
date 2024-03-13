@@ -14,94 +14,61 @@ class RolePermissionSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
-        $role_admin = Role::updateOrCreate(
-            ['name' => 'admin'],
-            ['name' => 'admin']
-        );
-        $role_manajemen = Role::updateOrCreate(
-            ['name' => 'manajemen'],
-            ['name' => 'manajemen']
-        );
-        $role_peminjam = Role::updateOrCreate(
-            ['name' => 'peminjam'],
-            ['name' => 'peminjam']
-        );
+{
+    $role_admin = Role::updateOrCreate(
+        ['name' => 'admin'],
+        ['name' => 'admin']
+    );
+    $role_manajemen = Role::updateOrCreate(
+        ['name' => 'manajemen'],
+        ['name' => 'manajemen']
+    );
+    $role_peminjam = Role::updateOrCreate(
+        ['name' => 'peminjam'],
+        ['name' => 'peminjam']
+    );
 
+    $permissions = [
+        'entri_user',
+        'entri_penyedia',
+        'entri_alat_bahan',
+        'edit_alat_bahan',
+        'entri_barang_masuk',
+        'entri_barang_keluar',
+        'edit_peminjam',
+        'entri_peminjam'
+    ];
+
+    foreach ($permissions as $permissionName) {
         $permission = Permission::updateOrCreate(
-            ['name' => 'entri_user'],
-            ['name' => 'entri_user']
-
+            ['name' => $permissionName],
+            ['name' => $permissionName]
         );
 
-        $permission2 = Permission::updateOrCreate(
-            ['name' => 'entri_penyedia'],
-            ['name' => 'entri_penyedia']
-
-        );
-
-        $permission3 = Permission::updateOrCreate(
-            ['name' => 'entri_alat_bahan'],
-            ['name' => 'entri_alat_bahan']
-
-        );
-
-        $permission4 = Permission::updateOrCreate(
-            ['name' => 'edit_alat_bahan'],
-            ['name' => 'edit_alat_bahan']
-
-        );
-
-        $permission5 = Permission::updateOrCreate(
-            ['name' => 'entri_barang_masuk'],
-            ['name' => 'entri_barang_masuk'],
-
-        );
-        
-        $permission6 = Permission::updateOrCreate(
-            ['name' => 'entri_barang_keluar'],
-            ['name' => 'entri_barang_keluar']
-
-        );
-
-        $permission7 = Permission::updateOrCreate(
-            ['name' => 'edit_peminjam'],
-            ['name' => 'edit_peminjam']
-
-        );
-
-        $permission8 = Permission::updateOrCreate(
-            ['name' => 'entri_peminjam'],
-            ['name' => 'entri_peminjam']
-
-        );
-
-
-        //Role Admin
+        // Role Admin
         $role_admin->givePermissionTo($permission);
-        $role_admin->givePermissionTo($permission2);
-        $role_admin->givePermissionTo($permission5);
-        $role_admin->givePermissionTo($permission3);
-        $role_admin->givePermissionTo($permission4);
-        $role_admin->givePermissionTo($permission6);
-        $role_admin->givePermissionTo($permission7);
-        $role_admin->givePermissionTo($permission8);
 
-        //Role Manajemen
-        $role_manajemen->givePermissionTo($permission3);
-        $role_manajemen->givePermissionTo($permission4);
-        $role_manajemen->givePermissionTo($permission5);
-        $role_manajemen->givePermissionTo($permission6);
+        // Role Manajemen
+        if (in_array($permissionName, ['entri_alat_bahan', 'edit_alat_bahan', 'entri_barang_masuk', 'entri_barang_keluar'])) {
+            $role_manajemen->givePermissionTo($permission);
+        }
 
-        //Role Peminjam
-        $role_peminjam->givePermissionTo($permission7);
-        $role_peminjam->givePermissionTo($permission8);
-
-        $user = User::find(1);
-    
-        //Assign Role
-        $user->assignRole(['admin']);
+        // Role Peminjam
+        if (in_array($permissionName, ['edit_peminjam', 'entri_peminjam'])) {
+            $role_peminjam->givePermissionTo($permission);
+        }
     }
+
+    // Assign Role
+    $user1 = User::find(1);
+    $user2 = User::find(2);
+    $user3 = User::find(3);
+
+    $user1->assignRole(['admin']);
+    $user2->assignRole(['manajemen']);
+    $user3->assignRole(['peminjam']);
+}
+
 
 
 }

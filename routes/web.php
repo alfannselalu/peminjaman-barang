@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\alatBahanController;
 use App\Http\Controllers\dataUserController;
+use App\Http\Controllers\PeminjamController;
+use App\Http\Controllers\PenyediaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
@@ -36,15 +38,19 @@ require __DIR__.'/auth.php';
 // Route::group(['prefix' => 'admin','middleware' => ['auth'], 'as' => 'admin.'], function(){
 // });
 // Dashboard
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified', 'role:admin']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified', 'role:admin|manajemen|peminjam']);
 // dataUser
-Route::resource('/dataUser', dataUserController::class)->middleware('permission:entri_user');
+Route::resource('/dataUser', dataUserController::class)->middleware(['auth','verified','permission:entri_user']);
 // alatBahan
-Route::get('/alatBahan', [alatBahanController::class, 'index'])->name('alatBahan')->middleware('auth', 'verified', 'role:admin');
-Route::get('/createSepatu', [alatBahanController::class, 'create'])->name('create.alatBahan')->middleware('auth', 'verified', 'permission:edit_alat_bahan'); 
-Route::post('/storeSepatu', [alatBahanController::class, 'store'])->name('store.alatBahan')->middleware('auth', 'verified', 'permission:edit_alat_bahan'); 
+Route::get('/alatBahan', [alatBahanController::class, 'index'])->name('alatBahan')->middleware(['auth', 'verified', 'role:admin|manajemen']);
+Route::get('/createSepatu', [alatBahanController::class, 'create'])->name('create.alatBahan')->middleware(['auth', 'verified', 'permission:edit_alat_bahan']); 
+Route::post('/storeSepatu', [alatBahanController::class, 'store'])->name('store.alatBahan')->middleware(['auth', 'verified', 'permission:edit_alat_bahan']); 
 
-Route::get('/editSepatu/{id}', [alatBahanController::class, 'edit'])->name('edit.alatBahan')->middleware('auth', 'verified', 'permission:edit_alat_bahan'); 
-Route::put('/updateSepatu/{id}', [alatBahanController::class, 'update'])->name('update.alatBahan')->middleware('auth', 'verified', 'permission:edit_alat_bahan'); 
-Route::delete('/deleteSepatu/{id}', [alatBahanController::class, 'delete'])->name('delete.alatBahan')->middleware('auth', 'verified', 'permission:edit_alat_bahan'); 
+Route::get('/editSepatu/{id}', [alatBahanController::class, 'edit'])->name('edit.alatBahan')->middleware(['auth', 'verified', 'permission:edit_alat_bahan']); 
+Route::put('/updateSepatu/{id}', [alatBahanController::class, 'update'])->name('update.alatBahan')->middleware(['auth', 'verified', 'permission:edit_alat_bahan']); 
+Route::delete('/deleteSepatu/{id}', [alatBahanController::class, 'delete'])->name('delete.alatBahan')->middleware(['auth', 'verified', 'permission:edit_alat_bahan']); 
 
+// Penyedia
+Route::resource('/penyedia', PenyediaController::class)->middleware(['auth','verified','permission:entri_penyedia']);
+// Peminjaman
+Route::resource('/peminjaman', PeminjamController::class)->middleware(['auth','verified','permission:entri_peminjam', 'permission:edit_peminjam']);

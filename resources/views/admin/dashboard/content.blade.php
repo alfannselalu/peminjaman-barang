@@ -103,7 +103,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="mt-4">
-                                                            <a href="#" class="btn btn-primary waves-effect waves-light btn-sm">Klik <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                                            <a href="/peminjaman" class="btn btn-primary waves-effect waves-light btn-sm">Klik <i class="mdi mdi-arrow-right ms-1"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -167,11 +167,11 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        PT.Era Solution
+                                        SMKN 9 BEKASI
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="text-sm-end d-none d-sm-block">
-                                            Design & Develop by SMKN 9 BEKASI
+                                            Design & Develop by Alfan
                                         </div>
                                     </div>
                                 </div>
